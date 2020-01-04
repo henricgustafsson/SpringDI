@@ -1,0 +1,29 @@
+package se.lexicon.henric.dependencyinjection.models;
+
+import java.lang.reflect.Constructor;
+
+public class Student {
+
+	static int _COUNTER=0;
+	int id;
+	String name;
+	
+	public Student(String name) {
+		this.id= ++_COUNTER;
+		setName(name);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getId() {
+		return id;
+	}
+	
+	
+}

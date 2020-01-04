@@ -1,0 +1,5 @@
+package se.lexicon.henric.dependencyinjection.models;
+
+public class Student {
+
+}

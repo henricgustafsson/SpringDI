@@ -1,0 +1,29 @@
+package se.lexicon.henric.dependencyinjection.util;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ScannerInputService implements UserInputService {
+
+Scanner scanner;
+
+
+@Autowired
+public ScannerInputService(Scanner scanner) {
+	
+}
+
+public String getString() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public int getInt() {
+	// TODO Auto-generated method stub
+	return 0;
+}	
+	
+}

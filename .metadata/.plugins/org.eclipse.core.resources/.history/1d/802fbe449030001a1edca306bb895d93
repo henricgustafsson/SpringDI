@@ -1,0 +1,53 @@
+package se.lexicon.henric.dependencyinjection.data_access;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import se.lexicon.henric.dependencyinjection.models.Student;
+
+
+@Component
+public class StudentDaoImpl implements StudentDao{
+
+	
+	List<Student> students;
+	
+	public StudentDaoImpl(List<Student> students) {
+		if(students == null) {
+			this.students = new ArrayList<Student>();
+		}
+		this.students = students;
+	}
+		
+	
+	public Student save(Student student) {
+		if(students!=null) {
+			
+		}
+		if(!students.contains(student)) {
+			students.add(student);
+			
+		}
+		students = new ArrayList<Student>();
+		students.add(student);
+		return student;
+	}
+
+	public Student find(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Student> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void Delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

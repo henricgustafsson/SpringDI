@@ -1,0 +1,15 @@
+package se.lexicon.henric.dependencyinjection.util;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class SystemOutput {
+
+	public void printString(String s){
+		System.out.println(s);
+	}
+	
+	public void nullCheckAndPrintStudentRepresentation(String s){
+		System.out.println(s);
+	}
+}

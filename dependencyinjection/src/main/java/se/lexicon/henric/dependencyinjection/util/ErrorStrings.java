@@ -1,0 +1,29 @@
+package se.lexicon.henric.dependencyinjection.util;
+
+public class ErrorStrings {
+	
+	public String getInvalidParamString() {
+		
+		return "Invalid parameter";
+	}
+	
+	public String getInvalidParamString(String s) {
+		
+		return "Invalid parameter"+s;
+	}
+	
+	public String getNoSuchFieldExceptionNoResult()
+	{
+		return "No results found";
+	}
+	
+	public String getNoSuchFieldExceptionNoResult(String s)
+	{
+		return "No results found" +s;
+	}
+	
+	public String getNoSuchFieldExceptionNoResult(String s,int i)
+	{
+		return "No results found" +s+i;
+	}
+}

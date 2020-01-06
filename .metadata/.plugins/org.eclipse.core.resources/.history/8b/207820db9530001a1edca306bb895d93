@@ -1,0 +1,64 @@
+package se.lexicon.henric.dependencyinjection.data_access;
+
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+import org.springframework.stereotype.Component;
+
+import se.lexicon.henric.dependencyinjection.models.Student;
+import se.lexicon.henric.dependencyinjection.util.ErrorStrings;
+
+
+@Component
+public class StudentDaoImpl implements StudentDao{
+
+	
+	List<Student> students;
+	
+	public StudentDaoImpl(List<Student> students) {
+		if(students == null) {
+			this.students = new ArrayList<Student>();
+		}
+		this.students = students;
+	}
+		
+	
+	public Student save(Student student) {
+		if(students == null || student == null) {
+			students = new ArrayList<Student>();
+		}
+		
+		if(student !=null) {
+			students.add(student);
+			return student;
+		}
+		throw new InvalidParameterException(ErrorStrings.getInvalidParamString());
+	}
+
+	public Student find(int id) {
+		
+		Student student;
+		for(Student s : students) {
+			if(s.getId() == id) {
+				student = s;
+				return;
+			}
+		}
+		
+		throw new NoSuchFieldError(ErrorStrings.NoSuchFieldExceptionNoResult("with id "+id +"")) ;
+	}
+
+	public List<Student> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void Delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

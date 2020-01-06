@@ -1,0 +1,17 @@
+package se.lexicon.henric.dependencyinjection.util;
+
+public class ErrorStrings {
+	
+	public static String getInvalidParamString() {
+		
+		return "Invalid parameter";
+	}
+	
+	public static String getInvalidParamString(String s) {
+		
+		return "Invalid parameter"+s;
+	}
+	
+	public String noResults{}
+
+}

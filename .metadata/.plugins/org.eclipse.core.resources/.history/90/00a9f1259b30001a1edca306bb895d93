@@ -1,0 +1,6 @@
+package se.lexicon.henric.dependencyinjection.config;
+
+@Config
+public class ScannerOutConfig {
+
+}

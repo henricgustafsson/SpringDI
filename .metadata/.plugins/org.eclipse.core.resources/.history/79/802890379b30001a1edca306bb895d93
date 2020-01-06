@@ -1,0 +1,15 @@
+package se.lexicon.henric.dependencyinjection.config;
+
+import java.util.Scanner;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class ScannerOutConfig {
+
+	@Bean
+	Scanner scannerOut() {
+		return new Scanner(System.out);
+	}
+	
+}

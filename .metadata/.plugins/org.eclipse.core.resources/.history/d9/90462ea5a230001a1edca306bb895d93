@@ -1,0 +1,59 @@
+package service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import se.lexicon.henric.dependencyinjection.data_access.StudentDao;
+import se.lexicon.henric.dependencyinjection.models.Student;
+import se.lexicon.henric.dependencyinjection.util.SystemOutput;
+import se.lexicon.henric.dependencyinjection.util.UserInputService;
+
+@Component
+public class StudentManagementImpl implements StudentManagement {
+
+	UserInputService service;
+	StudentDao studentDao;
+	SystemOutput output;
+	
+	@Autowired
+	public StudentManagementImpl(UserInputService service, StudentDao studentDao, SystemOutput output) {
+		this.service = service;
+		this.studentDao = studentDao;
+		this.output = output;
+	}
+
+	public Student create() {
+		
+		output.printString("Enter student name:");
+		
+		String name = service.getString();
+		
+		Student student = new Student(name);
+		
+		output.printString("Student with name"+ name+ "saved.");
+		 
+		return student;
+	}
+
+	public Student save(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Student find(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Student> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Student edit(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

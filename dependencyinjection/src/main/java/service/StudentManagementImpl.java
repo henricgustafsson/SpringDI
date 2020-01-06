@@ -1,20 +1,87 @@
 package service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import se.lexicon.henric.dependencyinjection.data_access.StudentDao;
+import se.lexicon.henric.dependencyinjection.models.Student;
+import se.lexicon.henric.dependencyinjection.util.SystemOutput;
 import se.lexicon.henric.dependencyinjection.util.UserInputService;
 
 @Component
-public class StudentManagementImpl {
+public class StudentManagementImpl implements StudentManagement {
 
 	UserInputService service;
 	StudentDao studentDao;
+	SystemOutput output;
 	
 	@Autowired
-	public StudentManagementImpl(UserInputService service, StudentDao studentDao) {
+	public StudentManagementImpl(UserInputService service, StudentDao studentDao, SystemOutput output) {
 		this.service = service;
 		this.studentDao = studentDao;
+		this.output = output;
+	}
+
+	public Student create() {
+		
+		output.printString("Enter student name:");
+		
+		String name = service.getString();
+		
+		Student student = new Student(name);
+		
+		output.printString("Student "+ name+ " created.");
+		 
+		return student;
+	}
+
+	public Student save(Student student) {
+	
+		Student savedStudent = null;
+		
+		try{
+			savedStudent = studentDao.save(student);
+			output.printString("Student "+ savedStudent.getName()+ " saved.");
+			 
+		}catch(Exception e) {
+			output.printString(e.getMessage());
+		}
+		
+		return savedStudent;
+	}
+
+	public Student find(int id) {
+		Student savedStudent = null;
+		
+		try{
+			savedStudent = studentDao.find(id);
+			output.printString("Student "+ savedStudent.getName()+ " saved.");
+			
+		} catch(NoSuchFieldException e) {
+			output.printString(e.getMessage());
+		}
+		
+		return savedStudent;
+	}
+
+	public List<Student> findAll() {
+		List<Student> results = null;
+		try {
+			results = studentDao.findAll();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			output.printString(e.getMessage());
+		}
+		return results;
+	}
+
+	public Student edit(Student student) {
+		
+		output.printString("Please enter new name:");
+		student.setName(service.getString());
+		save(student);
+		return student;
 	}
 }

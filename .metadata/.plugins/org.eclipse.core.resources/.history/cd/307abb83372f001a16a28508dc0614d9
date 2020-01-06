@@ -1,5 +1,0 @@
-package se.lexicon.henric.dependencyinjection.data_access;
-
-public class StudentDaoImpl {
-
-}

@@ -26,14 +26,15 @@ public class ScannerInputService implements UserInputService{
 
 
 	public String getString() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return scanner.nextLine();
+		
 	}
-
+	
 
 
 	public int getInt() {
 		// TODO Auto-generated method stub
-		return 0;
+		return scanner.nextInt();
 	}
 }

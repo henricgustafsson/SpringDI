@@ -1,0 +1,9 @@
+package service;
+
+public interface StudentManagement {
+
+	Student create();
+	Student save(Student student);
+	Student find(int id);
+	List<Student> findAll();
+	Student edit(Student student);

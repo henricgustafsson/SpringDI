@@ -1,0 +1,17 @@
+package service;
+
+import se.lexicon.henric.dependencyinjection.data_access.StudentDao;
+import se.lexicon.henric.dependencyinjection.util.UserInputService;
+
+Component
+public class StudentManagementImpl {
+
+	UserInputService service;
+	StudentDao studentDao;
+	
+	@Autowire
+	public StudentManagementImpl(UserInputService service, StudentDao studentDao) {
+		this.service = service;
+		this.studentDao = studentDao;
+	}
+}

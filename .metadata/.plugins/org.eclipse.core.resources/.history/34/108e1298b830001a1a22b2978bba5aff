@@ -86,11 +86,6 @@ public class Student {
 		return true;
 	}
 
-	/**public String toString ()
-	 * Returns a string representation of the object. In general, the toString method returns a string that"textually represents" this object.
-	 * *Overrides: toString() in Object
-	 * @RETURN String
-	 *  */
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + "]";

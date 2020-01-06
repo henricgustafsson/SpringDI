@@ -35,26 +35,13 @@ public class StudentDaoImpl implements StudentDao{
 	
 	/**
 	 * Setter for private field errorMessages of type ErrorStrings (package:Util)
-	 * Autowired to use ErrorStrings as a bean component in config.ErrorMessagesConfig
 	 * */
 	@Autowired
 	public void setErrorMessages(ErrorStrings errorMessages) {
 		this.errorMessages = errorMessages;
 	}
 	
-	/**
-	 * implementation of interface StudentDao
-	 * */
-	
-	/**
-	 * Method for saving student
-	 * Implementation of interface StudentDao
-	 * 
-	 * @PARAM Student student
-	 * @RETURN Student student
-	 * @THROWS NoSuchFieldException
-	 * */
-	public Student save(Student student) throws NoSuchFieldException {
+	public Student save(Student student) {
 		if(students == null || student == null) {
 			students = new ArrayList<Student>();
 		}
@@ -66,14 +53,6 @@ public class StudentDaoImpl implements StudentDao{
 		throw new InvalidParameterException(errorMessages.getInvalidParamString());
 	}
 
-	/**
-	 * Method for finding student by ID
-	 * Implementation of interface StudentDao
-	 * 
-	 * @PARAM int id
-	 * @RETURN Student student
-	 * @THROWS NoSuchFieldException
-	 * */
 	public Student find(int id) throws NoSuchFieldException {
 		
 		Student student =null;
@@ -91,13 +70,6 @@ public class StudentDaoImpl implements StudentDao{
 		
 	}
 
-	/**
-	 * Method for finding student by ID
-	 * Implementation of interface StudentDao
-	 *
-	 * @RETURN List<Student> 
-	 * @THROWS NoSuchFieldException
-	 * */
 	public List<Student> findAll() throws NoSuchFieldException {
 		if(students != null) {
 			return students;
@@ -105,13 +77,6 @@ public class StudentDaoImpl implements StudentDao{
 		throw new NoSuchFieldException(errorMessages.getNoSuchFieldExceptionNoResult());
 	}
 
-	/**
-	 * Method for deleting student by ID
-	 * Implementation of interface StudentDao
-	 *
-	 * @RETURN VOID
-	 * @THROWS NoSuchFieldException
-	 * */
 	public void Delete(int id) throws NoSuchFieldException {
 		
 		for(Student s : students) {

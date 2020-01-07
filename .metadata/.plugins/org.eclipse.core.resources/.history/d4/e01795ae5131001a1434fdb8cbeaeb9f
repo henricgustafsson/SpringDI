@@ -1,0 +1,10 @@
+package se.lexicon.henric.dependencyinjection.util;
+
+import se.lexicon.henric.dependencyinjection.models.Student;
+
+public interface SystemOutput {
+
+	
+	public void printString(String s);
+	
+}

@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import se.lexicon.henric.dependencyinjection.config.ComponentScanConfig;
 import se.lexicon.henric.dependencyinjection.data_access.StudentDao;
+import se.lexicon.henric.dependencyinjection.util.SystemOutput;
 import se.lexicon.henric.dependencyinjection.util.UserInputService;
 
 /**
@@ -17,7 +18,11 @@ public class App
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ComponentScanConfig.class);
  
         StudentDao studentDao = context.getBean(StudentDao.class);
-        UserInputService service = context.getBean(UserInputService.class);
+        UserInputService inputService = context.getBean(UserInputService.class);
+        /**
+         * TODO: SystemOutputService / OutputConfig incorrectly configed? Quick implementation fix in 
+         * Service.StudentManagementImpl by instantiating POJO instead */
+       // SystemOutput outputService = context.getBean(SystemOutput.class);
         context.close();
         
     }

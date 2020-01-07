@@ -1,1 +1,4 @@
 1578325379856	Delete element
+1578402810467	Move 'service' to 'dependencyinjection'
+1578402924791	Rename resource 'SystemOutput.java'
+1578403271296	Extract interface 'SystemOutput'

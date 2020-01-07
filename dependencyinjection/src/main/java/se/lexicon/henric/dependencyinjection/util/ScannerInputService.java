@@ -16,7 +16,10 @@ public class ScannerInputService implements UserInputService{
 
     }
 
-    
+    /**
+     * Constructor
+     * @PARAM Scanner scanner
+     * */
 
     @Autowired
     public void setScanner(Scanner scanner) {
@@ -24,7 +27,12 @@ public class ScannerInputService implements UserInputService{
     }
 
 
-
+    /**
+     * Method for getting string
+     * 
+     * @RETURN string - using field Scanner scanner.nextLine()
+     * */
+    
 	public String getString() {
 		
 		return scanner.nextLine();
@@ -32,7 +40,12 @@ public class ScannerInputService implements UserInputService{
 	}
 	
 
-
+	/**
+     * Method for getting string
+     *    
+     * @RETURN string - using field Scanner scanner.nextLine()
+     * */
+	
 	public int getInt() {
 		// TODO Auto-generated method stub
 		return scanner.nextInt();

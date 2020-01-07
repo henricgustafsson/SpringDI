@@ -1,0 +1,59 @@
+package se.lexicon.henric.dependencyinjection.util;
+
+public class ErrorStrings {
+	/**
+	 * Method for getting custom error string for getInvalidParamString
+	 *  
+	 * @RETURN string
+	 * */
+	public String getInvalidParamString() {
+		
+		return "Invalid parameter";
+	}
+	/**
+	 * Method for getting custom error string for getInvalidParamString
+	 * 
+	 * @PARAM String s
+	 * @RETURN string
+	 * */
+	public String getInvalidParamString(String s) {
+		
+		return "Invalid parameter"+s;
+	}
+	
+	
+	/**
+	 * Method for getting custom error string for NoSuchFieldException (no results)
+	 * 
+	 * @RETURN string
+	 * */
+	public String getNoSuchFieldExceptionNoResult()
+	{
+		return "No results found";
+	}
+	
+	
+	/**
+	 * Method for getting custom error string for NoSuchFieldException (no results)
+	 * 
+	 * @PARAM String s
+	 * @RETURN string
+	 * */
+	public String getNoSuchFieldExceptionNoResult(String s)
+	{
+		return "No results found" +s;
+	}
+	
+	
+	/**
+	 * Method for getting custom error string for NoSuchFieldException (no results)
+	 * 
+	 * @PARAM String s
+	 * @PARAM int i
+	 * @RETURN string
+	 * */
+	public String getNoSuchFieldExceptionNoResult(String s,int i)
+	{
+		return "No results found" +s+i;
+	}
+}

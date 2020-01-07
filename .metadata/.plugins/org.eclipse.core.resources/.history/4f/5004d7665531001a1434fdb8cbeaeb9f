@@ -1,0 +1,54 @@
+package se.lexicon.henric.dependencyinjection.util;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ScannerInputService implements UserInputService{
+
+
+    private Scanner scanner;
+
+
+    public ScannerInputService() {
+
+    }
+
+    /**
+     * Constructor
+     * @PARAM Scanner scanner
+     * */
+
+    @Autowired
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+
+    /**
+     * Method for getting string
+     * 
+     * @PARAM Scanner scanner
+     * @RETURN string - using field Scanner scanner.nextLine()
+     * */
+    
+	public String getString() {
+		
+		return scanner.nextLine();
+		
+	}
+	
+
+	/**
+     * Method for getting string
+     *    
+     * @RETURN string - using field Scanner scanner.nextLine()
+     * */
+	
+	public int getInt() {
+		// TODO Auto-generated method stub
+		return scanner.nextInt();
+	}
+}
